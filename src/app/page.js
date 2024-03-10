@@ -1,95 +1,47 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import HelloWorld , {Another} from "./components/HelloWorld";
+import JsxDemo from "./components/JsxDemo";
+import Greeting from "./components/Greeting";
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+    console.log("This is text before JSX ...")
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+    /*const name = 'Gregorio Y. Zara';*/
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+    const today = new Date();
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+    function formatDate(date) {
+        return new Intl.DateTimeFormat(
+            'en-US',
+            { weekday: 'long' }
+        ).format(date);
+    }
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+    let person={
+        name:'HL'
+    }
+
+    return (
+        <main>
+            <div>
+             {/*   <HelloWorld/>
+                <Another/>
+                <HelloWorld/>*/}
+
+                {/*<JsxDemo/>
+                { new Date().toString()}*/}
+
+
+                {/*<h1>{name}'s To Do List</h1>*/}
+
+                {/*<h1>To Do List for {formatDate(today)}</h1>
+                    <h1>{person.name}</h1>*/}
+
+                <Greeting name={"Aung La"}/>
+                <Greeting name={"Aung Nan Daw"}/>
+                <Greeting name={"Aung Zabu"}/>
+            </div>
+        </main>
+    );
 }
