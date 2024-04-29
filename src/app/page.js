@@ -1,46 +1,74 @@
-import Image from "next/image";
-import HelloWorld , {Another} from "./components/HelloWorld";
-import JsxDemo from "./components/JsxDemo";
-import Greeting from "./components/Greeting";
+/*
+import JsxAsProperty from "./components/JsxAsProperty";
+import HelloWorld from "./components/HelloWorld";
+*/
+import TabDemo from "./components/tab/TabDemo"
 
 export default function Home() {
 
-    console.log("This is text before JSX ...")
+    let date = new Date();
 
-    /*const name = 'Gregorio Y. Zara';*/
-
-    const today = new Date();
-
-    function formatDate(date) {
-        return new Intl.DateTimeFormat(
-            'en-US',
-            { weekday: 'long' }
-        ).format(date);
+    let p = {
+        name: 'Htein Linn',
+        age: 43
     }
 
-    let person={
-        name:'HL'
-    }
+    let headers = ['Tab1', 'Tab2', 'Tab3']
 
     return (
         <main>
             <div>
-             {/*   <HelloWorld/>
-                <Another/>
-                <HelloWorld/>*/}
 
-                {/*<JsxDemo/>
-                { new Date().toString()}*/}
+                {/*{<Border>
+                    <FirstLevel person={p}
+                                another={"This is another property"}>
+                        <h1>Children</h1>
+                        <h2>Children-2</h2>
+                    </FirstLevel>
+                </Border>
+                }*/}
+
+                {/*<Border>
+                  <Greeting
+                      name={"Aung Nan Daw"}
+                      person={{name:'Someone'}}
+                  />
+
+                  <Greeting/>
+              </Border>*/}
+
+                {/*<Border>
+                    <HelloWorld/>
+                </Border>*/}
+
+                {/*{<JsxAsProperty tag={<HelloWorld/>}/>}*/}
 
 
-                {/*<h1>{name}'s To Do List</h1>*/}
+                {/*<Profile admin={true}/>*/}
 
-                {/*<h1>To Do List for {formatDate(today)}</h1>
-                    <h1>{person.name}</h1>*/}
+                {/*<NumberProblem/>*/}
 
-                <Greeting name={"Aung La"}/>
-                <Greeting name={"Aung Nan Daw"}/>
-                <Greeting name={"Aung Zabu"}/>
+                {/*{<ListDemo/>}*/}
+                {/*{<TableDemo/>}*/}
+                {/*{<TimeDemo date={date}/>}*/}
+                {/*{<EventDemo/>}*/}
+                {/*{<Counter/>}*/}
+                {/*<hr/>
+                {<Counter/>}*/}
+
+                {/*<Parent/>*/}
+                {/*<Timer/>*/}
+
+                {/*<Snapshot/>*/}
+                {/*<CounterProblem/>*/}
+                {/*<EqualityDemo/>*/}
+                {/*<TodoListDemo/>*/}
+                {/*<FormDemo/>*/}
+                <TabDemo headers={headers}>
+                    <div>Page1</div>
+                    <div>Page2</div>
+                    <div>Page3</div>
+                </TabDemo>
             </div>
         </main>
     );
